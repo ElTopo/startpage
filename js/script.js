@@ -210,6 +210,8 @@ $(document).ready(function() {
 	/*  Search Engines  *\
 	\*==================*/
 
+	var search = '';
+	/*
 	var search = '<div id="searches">';
 
 	for (var i = 0; i < settings.search.engines.length; i++) {
@@ -224,6 +226,7 @@ $(document).ready(function() {
 	}
 
 	search = search + '</div>';
+	*/
 
 	/*  Add to page  *\
 	\*===============*/
