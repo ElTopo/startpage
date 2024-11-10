@@ -27,7 +27,7 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" charset="UTF-8">
 	<link rel="stylesheet" href="style/style.css" type="text/css" />
 	<script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
 	<script type="text/javascript" src="js/script.js"></script>
@@ -42,21 +42,56 @@
 	URLs go here, in the following format:
 
 Heading Text
-http://www.example.com || Title || Keybinding
+http(s)://URL || Title || Name || Keybinding
+1. URL and Title are required, Name and Keybing are optinal
+2. if Name is present, links between Title and _end_ are multiple-link-line
+3. Title in between the first URL and the last URL should be '.'
 
-Second Heading Text
-http://www.example.com || Another Title
+examples:
+1. single-URL item:
+https://example.com || 1-link-line-example
+	==> 1-link-line-example (link to https://example.com)
+2. multipll-URL item:
+https://site1.example.com || 3-link-line-example || site1
+https://site2.example.com || . || site2
+https://site3.example.com || _end_ || site3
+	==> 3-link-line-example (non-clickable title) \
+	    site1 (link to https://site1.example.com) \
+		site2 (link to https://site2.example.com) \
+		site3 (link to https://site3.example.com)
+
 -->
 
 Sites
-https://google.com || Google || g
-https://bing.com || bing || b
-https://www.wikipedia.org || wiki || w
-https://zh.wikipedia.org || 中 || z
+https://google.com || [Google] || G || g
+https://chat.google.com || . || chat 
+https://keep.google.com || . || keep
+https://maps.google.com || . || maps
+https://go.dev/dl/ || _end_ || go
+https://bing.com || bing ||  || b
+https://www.wikipedia.org || [wikipedia] || en || w
+https://zh.wikipedia.org || _end_ || 中 || z
+https://github.com || github ||  || t
+https://www.reddit.com || reddit ||  || r
 
-Locals
+AGH
+http://172.21.2.5:8000 || [lxlrpi] || IP 
+http://lxlrpi.myaddr.io:8000 || . || zt 
+http://lxlrpi.local:8000 || _end_ || loc 
+http://172.21.2.8:8000 || [solorpi] || IP 
+http://solorpi.myaddr.io:8000 || . || zt 
+http://solorpi.local:8000 || _end_ || loc 
+http://10.10.5.5:8000 || [lunarpi] || IP 
+http://lunarpi.myaddr.io:8000 || . || zt 
+http://lunarpi.local:8000 || _end_ || loc 
 
-services
+Services
+https://dynv6.com/ || dv6
+https://myaddr.io/ || myaddr
+https://dash.cloudflare.com/ || dash
+https://newreleases.io/ || NR
+https://auth.ente.io/ || auth
+
 
 </body>
 </html>

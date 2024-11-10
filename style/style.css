@@ -39,13 +39,15 @@ body {
 }
 
 a {
-	color: #999;														/* Link Color */
+	/* color: #999;														/* Link Color */
+	color: Aqua;														/* Link Color */
 	font-size: 11px;												/* Link Size */
 	text-decoration: none;									/* Remove underlines */
 }
 
 a:hover {
-	color: #ddd;														/* Link hover color */
+	/* color: #ddd;														/* Link hover color */
+	color: Tomato;														/* Link hover color */
 }
 
 .block {
@@ -58,6 +60,7 @@ a:hover {
 h1 {
 	margin: 0;
 	font-size: 1.5em;												/* Title size */
+	color: Violet;														/* Text color for h1 */
 }
 
 ul {
@@ -67,6 +70,7 @@ ul {
 ul li {
 	list-style: none;
 	padding: 5px;
+	color: #FFF;														/* Text color for li */
 }
 
 li img {
@@ -87,6 +91,7 @@ li img {
 	bottom: 10px;
 	right: 10px;
 	font-size: 2em;
+	color: Indigo;														/* Text color for clock */
 }
 
 form {

@@ -54,7 +54,7 @@ var settings = {
 	},
 	
 	"clock": {
-		"showClock": true
+		"showClock": false /* true */
 	},
 
 	"animation": {
@@ -149,33 +149,56 @@ $(document).ready(function() {
 		\*=======================*/
 		var lineArray = line.split(" || ");
 		var url = lineArray[0];
-		var title = lineArray[1];
-		
-		var icon = "";
-		if (lineArray[3]) {
-			icon = lineArray[3];
+		var title = "";
+		if (lineArray[1]) {
+			title = lineArray[1];
 		}
+		var name = "";
+		if (lineArray[2]) {
+			name = lineArray[2];
+		}
+		var key = "";
+		if (lineArray[3]) {
+			key = lineArray[3];
+		}
+		var icon = "";
 		
 		/*  Add to shortcuts array *\
 		\*=========================*/
-		if(lineArray[2]) {
-			shortcuts[lineArray[2]] = "'"+url+"'";
-		}
-
-		/* Prepares HTML code for showing icon *\
-		\*=====================================*/
-		var iconHtml = '';
-		if (settings.icons.showIcons && icon) {
-			iconHtml = '<img src="' + icon + '"/>'; 
+		if(key != "") {
+			shortcuts[key] = "'"+url+"'";
 		}
 
 		/*  Add HTML code  *\
 		\*=================*/
+		var urltitle = "";
+		var linetitle = "";
+		if(name != "") {
+			urltitle = name;
+		} else if (title != "") {
+			urltitle = title;
+		}
+		if (title != "" && title != "." && title != "_end_" && name != "") {
+			linetitle = title;
+		}
+		var li_b = "";
+		var li_e = "";
+		if (title != "" && title != "." && title != "_end_") {
+			li_b = "<li>";
+		}
+		if (title == "_end_" ) {
+			li_e = "</li>";
+		}
+		if (name == "") {
+			li_b = "<li>";
+			li_e = "</li>";
+		}
+
 		if(settings.navigation.newWindow) {
-			html = html + '<li>' + iconHtml + '<a href="' + url + '" target="_blank">' + title + '</a></li>'
+			html = html + li_b + linetitle + ' <a href="' + url + '" target="_blank">' + urltitle + '</a>' + li_e;
 		}
 		else {
-			html = html + '<li>' + iconHtml + '<a href="' + url + '">' + title + '</a></li>'
+			html = html + li_b + linetitle + ' <a href="' + url + '">' + urltitle + '</a>' + li_e;
 		}
 	}
 
