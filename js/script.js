@@ -178,15 +178,20 @@ $(document).ready(function() {
 		} else if (title != "") {
 			urltitle = title;
 		}
-		if (title != "" && title != "." && title != "_end_" && name != "") {
+		if (title != "" && title != "." && title != "__end__" && name != "") {
 			linetitle = title;
 		}
 		var li_b = "";
 		var li_e = "";
-		if (title != "" && title != "." && title != "_end_") {
+		if (title == "__begin__") {
+			/* __begin__: no title */
+			linetitle = "";
 			li_b = "<li>";
 		}
-		if (title == "_end_" ) {
+		if (title != "" && title != "." && title != "__end__") {
+			li_b = "<li>";
+		}
+		if (title == "__end__" ) {
 			li_e = "</li>";
 		}
 		if (name == "") {

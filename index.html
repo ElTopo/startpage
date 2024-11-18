@@ -44,7 +44,7 @@
 Heading Text
 http(s)://URL || Title || Name || Keybinding
 1. URL and Title are required, Name and Keybing are optinal
-2. if Name is present, links between Title and _end_ are multiple-link-line
+2. if Name is present, links between Title and __end__ are multiple-link-line
 3. Title in between the first URL and the last URL should be '.'
 
 examples:
@@ -54,7 +54,7 @@ https://example.com || 1-link-line-example
 2. multipll-URL item:
 https://site1.example.com || 3-link-line-example || site1
 https://site2.example.com || . || site2
-https://site3.example.com || _end_ || site3
+https://site3.example.com || __end__ || site3
 	==> 3-link-line-example (non-clickable title) \
 	    site1 (link to https://site1.example.com) \
 		site2 (link to https://site2.example.com) \
@@ -67,30 +67,36 @@ https://google.com || [Google] || G || g
 https://chat.google.com || . || chat 
 https://keep.google.com || . || keep
 https://maps.google.com || . || maps
-https://go.dev/dl/ || _end_ || go
+https://go.dev/dl/ || __end__ || go
 https://bing.com || bing ||  || b
 https://www.wikipedia.org || [wikipedia] || en || w
-https://zh.wikipedia.org || _end_ || 中 || z
+https://zh.wikipedia.org || __end__ || 中 || z
 https://github.com || github ||  || t
 https://www.reddit.com || reddit ||  || r
 
-AGH
-http://172.21.2.5:8000 || [lxlrpi] || IP 
-http://lxlrpi.myaddr.io:8000 || . || zt 
-http://lxlrpi.local:8000 || _end_ || loc 
-http://172.21.2.8:8000 || [solorpi] || IP 
-http://solorpi.myaddr.io:8000 || . || zt 
-http://solorpi.local:8000 || _end_ || loc 
-http://10.10.5.5:8000 || [lunarpi] || IP 
-http://lunarpi.myaddr.io:8000 || . || zt 
-http://lunarpi.local:8000 || _end_ || loc 
 
 Services
-https://dynv6.com/ || dv6
 https://myaddr.io/ || myaddr
 https://dash.cloudflare.com/ || dash
 https://newreleases.io/ || NR
-https://auth.ente.io/ || auth
+
+Examples
+<!-- multiple-link line, with title -->
+https://e1.com/ || MultiLinks || e1
+https://e2.com/ || . || e2 || 2
+https://e3.com/ || . || e3
+https://e4.com/ || __end__ || e4
+
+<!-- multiple-link line, without title -->
+https://e11.com/ || __begin__ || e11
+https://e12.com/ || . || e12
+https://e13.com/ || __end__ || e13
+
+<!-- single-link line -->
+https://e21.com/ || e21
+
+<!-- single-link line, with hotkey "31" -->
+https://e31.com/ || e31 ||  || 31
 
 
 </body>
