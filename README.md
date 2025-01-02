@@ -1,6 +1,6 @@
 # startpage.rwrt
 
-See lxl-README.md for changes/improvements.
+See [lxl-README.md](lxl-README.md) for changes/improvements.
 
 ## Configuration
 
