@@ -1,5 +1,7 @@
 # startpage.rwrt
 
+See lxl-README.md for changes/improvements.
+
 ## Configuration
 
 ### index.html
